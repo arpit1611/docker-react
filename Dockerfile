@@ -6,8 +6,8 @@ COPY . .
 RUN npm run build
 
 
-FROM ngnix
-COPY --from=builder /app/build /user/share/ngnix/html
+FROM nginx
+COPY --from=builder /app/build /usr/share/nginx/html
 
 
 
